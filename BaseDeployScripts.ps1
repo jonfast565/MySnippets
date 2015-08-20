@@ -2,6 +2,7 @@
 # Jon Fast
 # Last Modified: 8/7/2015
 
+
 ## ENVIRONMENT VARS ##
 
 $env:ReadySetCopyPath = "D:\BuildScripts\ReadySetCopy.Console.exe"
@@ -11,9 +12,11 @@ $env:ReadySetCopyPath = "D:\BuildScripts\ReadySetCopy.Console.exe"
 # Deploy function (uses custom util)
 function Deploy (
 	[ValidateNotNullOrEmpty()]
-	[string] $ProjectName,
-	[ValidateNotNullOrEmpty()]
 	[string] $ConfigLocation,
+	[ValidateNotNullOrEmpty()]
+	[string] $ProfileName,
+    [ValidateNotNullOrEmpty()]
+    [string] $ProfileLevel,
     [ValidateNotNullOrEmpty()]
     [string] $FromLocation,
     [ValidateNotNullOrEmpty()]
@@ -27,8 +30,10 @@ function Deploy (
         $ToLocationUrl = $ToLocation
         if ($BuildNumber -ne $null) {
             $ToLocationUrl = "$($ToLocation)/$($BuildNumber)/$($ProjectName)/"
+        } else {
+            $ToLocationUrl = "$($ToLocation)/$($ProjectName)/"
         }
-        $CopyCommand = "$($env:ReadySetCopyPath) $($ConfigLocation) $($ToLocationUrl) $($FromLocation)"
+        $CopyCommand = "$($env:ReadySetCopyPath) $($ConfigLocation) $($ProfileName) $($ProfileLevel) $($ToLocationUrl) $($FromLocation)"
         Invoke-Expression -Command "$($CopyCommand)"
         Write-Host "Deployment from $($FromLocation) to $($ToLocation) completed."
     }

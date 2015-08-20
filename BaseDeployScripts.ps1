@@ -28,10 +28,10 @@ function Deploy (
         Write-Host "Deploying files from $($FromLocation) to $($ToLocation)..."
         # this is for appending information about the to be pushed folder
         $ToLocationUrl = $ToLocation
-        if ($BuildNumber -ne $null) {
-            $ToLocationUrl = "$($ToLocation)/$($BuildNumber)/$($ProjectName)/"
+        if (-not [string]::IsNullOrEmpty($BuildNumber)) {
+            $ToLocationUrl = "$($ToLocation)/$($BuildNumber)/$($ProfileName)/"
         } else {
-            $ToLocationUrl = "$($ToLocation)/$($ProjectName)/"
+            $ToLocationUrl = "$($ToLocation)/$($ProfileName)/"
         }
         $CopyCommand = "$($env:ReadySetCopyPath) $($ConfigLocation) $($ProfileName) $($ProfileLevel) $($ToLocationUrl) $($FromLocation)"
         Invoke-Expression -Command "$($CopyCommand)"
@@ -44,3 +44,5 @@ function Deploy (
     }
     exit $ExitCode
 }
+
+Deploy "\\devweb5\d$\BuildScripts\Config\Config.xml" "WebNCDR" "Release" "\\stgncdrweb1\d$\Websites\www.ncdr.com\WebNCDR\" "\\ncdrweb3\d$\ToBePushed" "PW08212015"

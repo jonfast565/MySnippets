@@ -10,9 +10,9 @@ namespace CodingInterviewQuestions
     {
         static void Main(string[] args)
         {
-            HashTest();
+            // HashTest();
             QuickSortTest();
-            MergeSortTest();
+            BubbleSortTest();
             BinarySearchTest();
 
             // wait until the application is finished
@@ -41,6 +41,14 @@ namespace CodingInterviewQuestions
         {
             var elements = new[] { 6, 5, 4, 3, 2, 1, 0 };
             var sorter = new MergeSorter<int>(new IntegerComparator());
+            var sorted = sorter.Sort(elements);
+            Console.WriteLine("[" + string.Join(", ", sorted) + "]");
+        }
+
+        private static void BubbleSortTest()
+        {
+            var elements = new[] { 6, 5, 4, 3, 2, 1, 0 };
+            var sorter = new BubbleSorter<int>(new IntegerComparator());
             var sorted = sorter.Sort(elements);
             Console.WriteLine("[" + string.Join(", ", sorted) + "]");
         }

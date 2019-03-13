@@ -693,11 +693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jfast\\Source\\Repos\\CodingInterviewQuestions\\CodingInterviewQuestions\\CodingInterviewQuestions.csproj",
+      "projectUniqueName": "C:\\Users\\jfast\\Desktop\\Repos\\MySnippets\\C#\\CodingInterviewQuestions\\CodingInterviewQuestions\\CodingInterviewQuestions.csproj",
       "projectName": "CodingInterviewQuestions",
-      "projectPath": "C:\\Users\\jfast\\Source\\Repos\\CodingInterviewQuestions\\CodingInterviewQuestions\\CodingInterviewQuestions.csproj",
+      "projectPath": "C:\\Users\\jfast\\Desktop\\Repos\\MySnippets\\C#\\CodingInterviewQuestions\\CodingInterviewQuestions\\CodingInterviewQuestions.csproj",
       "packagesPath": "C:\\Users\\jfast\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jfast\\Source\\Repos\\CodingInterviewQuestions\\CodingInterviewQuestions\\obj\\",
+      "outputPath": "C:\\Users\\jfast\\Desktop\\Repos\\MySnippets\\C#\\CodingInterviewQuestions\\CodingInterviewQuestions\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using CodingInterviewQuestions.Comparator;
 using CodingInterviewQuestions.Hashing;
+using CodingInterviewQuestions.ObjectOrientedProgramming;
 using CodingInterviewQuestions.Searching;
 using CodingInterviewQuestions.Sorting;
 using CodingInterviewQuestions.Trees;
@@ -16,7 +18,8 @@ namespace CodingInterviewQuestions
             // BubbleSortTest();
             // MergeSortTest();
             // BinarySearchTest();
-            BinarySearchTreeTest();
+            // BinarySearchTreeTest();
+            OopTest();
 
             // wait until the application is finished
             Console.ReadKey();
@@ -78,6 +81,22 @@ namespace CodingInterviewQuestions
                 searchTree.InsertValue(element);
             }
             Console.WriteLine(searchTree);
+        }
+
+        private static void OopTest()
+        {
+            var parkingGarage = ParkingGarage.CreateParkingGarageWithSpaceCounts(new Dictionary<SpaceType, int>
+            {
+                { SpaceType.Regular, 10 },
+                { SpaceType.Compact, 1 },
+                { SpaceType.DoubleWide, 1 }
+            });
+            var motorcycle = new Motorcycle();
+            var car = new Car();
+            var semi = new SemiTruck();
+
+            parkingGarage.Park(motorcycle);
+
         }
     }
 }

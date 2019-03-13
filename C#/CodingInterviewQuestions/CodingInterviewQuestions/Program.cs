@@ -3,6 +3,7 @@ using CodingInterviewQuestions.Comparator;
 using CodingInterviewQuestions.Hashing;
 using CodingInterviewQuestions.Searching;
 using CodingInterviewQuestions.Sorting;
+using CodingInterviewQuestions.Trees;
 
 namespace CodingInterviewQuestions
 {
@@ -11,10 +12,11 @@ namespace CodingInterviewQuestions
         static void Main(string[] args)
         {
             // HashTest();
-            QuickSortTest();
-            BubbleSortTest();
-            MergeSortTest();
-            BinarySearchTest();
+            // QuickSortTest();
+            // BubbleSortTest();
+            // MergeSortTest();
+            // BinarySearchTest();
+            BinarySearchTreeTest();
 
             // wait until the application is finished
             Console.ReadKey();
@@ -65,6 +67,17 @@ namespace CodingInterviewQuestions
             var found6 = searcher.SearchFor(elements, 6);
             Console.WriteLine("Found 10: " + found10);
             Console.WriteLine("Found 6: " + found6);
+        }
+
+        private static void BinarySearchTreeTest()
+        {
+            var elements = new[] { 100, 50, 150, 7, 6, 9, 8 };
+            var searchTree = new BinarySearchTreeNode<int>(new IntegerComparator());
+            foreach (var element in elements)
+            {
+                searchTree.InsertValue(element);
+            }
+            Console.WriteLine(searchTree);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace CodingInterviewQuestions
             // HashTest();
             QuickSortTest();
             BubbleSortTest();
+            MergeSortTest();
             BinarySearchTest();
 
             // wait until the application is finished

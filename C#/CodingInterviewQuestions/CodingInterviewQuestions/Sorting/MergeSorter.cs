@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using CodingInterviewQuestions.Comparator;
@@ -15,75 +16,97 @@ namespace CodingInterviewQuestions.Sorting
             _comparator = comparator;
         }
 
-        private void Merge(T[] resultArray, int leftIndex, int middleIndex, int rightIndex)
+        private T[] Merge(T[] firstArray, T[] secondArray)
         {
-            var leftArray = new T[middleIndex - leftIndex + 1];
-            var rightArray = new T[rightIndex - middleIndex];
+            if (firstArray.Length == 0
+                && secondArray.Length == 0)
+                return new T[] { };
 
-            Array.ConstrainedCopy(resultArray, 
-                leftIndex, 
-                leftArray, 
-                0, 
-                leftArray.Length);
+            if (firstArray.Length == 0)
+                return secondArray;
 
-            Array.ConstrainedCopy(resultArray, 
-                middleIndex + 1, 
-                rightArray, 
-                0, 
-                rightArray.Length);
+            if (secondArray.Length == 0)
+                return firstArray;
 
-            int leftCounter = 0, rightCounter = 0, mergeCounter = leftIndex;
+            var resultArray = new T[firstArray.Length + secondArray.Length];
+            var resultCounter = 0;
 
-            // get the bulk of it
-            while (leftCounter < leftArray.Length && rightCounter < rightArray.Length)
+            var firstArrayCounter = 0;
+            var secondArrayCounter = 0;
+            while (firstArrayCounter < firstArray.Length
+                   && secondArrayCounter < secondArray.Length)
             {
-                if (_comparator.LessThanEqual(leftArray[leftCounter], rightArray[rightCounter]))
+                var firstValue = firstArray[firstArrayCounter];
+                var secondValue = secondArray[secondArrayCounter];
+
+                if (_comparator.LessThanEqual(firstValue, secondValue))
                 {
-                    // populate with i value and move forward by 1
-                    resultArray[mergeCounter] = leftArray[leftCounter];
-                    leftCounter++;
+                    resultArray[resultCounter] = firstValue;
+                    firstArrayCounter++;
                 }
                 else
                 {
-                    // populate with j value and move forward by 1
-                    resultArray[mergeCounter] = rightArray[rightCounter];
-                    rightCounter++;
+                    resultArray[resultCounter] = secondValue;
+                    secondArrayCounter++;
                 }
 
-                // move k forward, as it has a new value
-                mergeCounter++;
+                resultCounter++;
             }
 
-            // get the remaining elements from the left resultArray
-            while (leftCounter < leftArray.Length)
+            while (firstArrayCounter < firstArray.Length)
             {
-                resultArray[mergeCounter] = leftArray[leftCounter];
-                leftCounter++;
-                mergeCounter++;
+                var firstValue = firstArray[firstArrayCounter];
+                resultArray[resultCounter] = firstValue;
+                firstArrayCounter++;
+                resultCounter++;
             }
 
-            // get the remaining elements from the right resultArray
-            while (rightCounter < rightArray.Length)
+            while (secondArrayCounter < secondArray.Length)
             {
-                resultArray[mergeCounter] = rightArray[rightCounter];
-                rightCounter++;
-                mergeCounter++;
+                var secondValue = secondArray[secondArrayCounter];
+                resultArray[resultCounter] = secondValue;
+                secondArrayCounter++;
+                resultCounter++;
             }
+
+            Debug.Assert(resultCounter == resultArray.Length);
+
+            return resultArray;
         }
 
-        public void SortInternal(T[] unsorted, int leftIndex, int rightIndex)
+        private T[] SortInternal(T[] unsorted)
         {
-            if (leftIndex >= rightIndex) return;
-            var midPoint = leftIndex + (rightIndex - 1) / 2;
-            SortInternal(unsorted, leftIndex, midPoint);
-            SortInternal(unsorted, midPoint + 1, rightIndex);
-            Merge(unsorted, leftIndex, midPoint, rightIndex);
+            if (unsorted.Length <= 1)
+                return unsorted;
+
+            const int leftIndex = 0;
+            var midPoint = (unsorted.Length - 1) / 2;
+            var rightIndex = unsorted.Length - 1;
+
+            var leftArray = Slice(unsorted, leftIndex, midPoint);
+            var rightArray = Slice(unsorted, midPoint + 1, rightIndex);
+            var firstResult = SortInternal(leftArray.ToArray());
+            var secondResult = SortInternal(rightArray.ToArray());
+            var result = Merge(firstResult, secondResult);
+
+            return result;
+        }
+
+        private static IEnumerable<T> Slice(IReadOnlyList<T> unsorted, int leftIndex, int rightIndex)
+        {
+            var result = new List<T>();
+            for (var i = leftIndex; i <= rightIndex; i++)
+            {
+                result.Add(unsorted[i]);
+            }
+
+            return result.ToArray();
         }
 
         public IEnumerable<T> Sort(IEnumerable<T> unsorted)
         {
-            var sortedArray = unsorted.ToArray();
-            SortInternal(sortedArray, 0, sortedArray.Length - 1);
+            var unsortedArray = unsorted.ToArray();
+            var sortedArray = SortInternal(unsortedArray);
             return sortedArray;
         }
     }

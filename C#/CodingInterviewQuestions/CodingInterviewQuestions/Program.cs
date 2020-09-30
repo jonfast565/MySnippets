@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CodingInterviewQuestions.Comparator;
 using CodingInterviewQuestions.Hashing;
+using CodingInterviewQuestions.Numerical;
 using CodingInterviewQuestions.ObjectOrientedProgramming;
 using CodingInterviewQuestions.Searching;
 using CodingInterviewQuestions.Sorting;
@@ -19,7 +20,8 @@ namespace CodingInterviewQuestions
             // MergeSortTest();
             // BinarySearchTest();
             // BinarySearchTreeTest();
-            OopTest();
+            // OopTest();
+            NumericalManipulationTest();
 
             // wait until the application is finished
             Console.ReadKey();
@@ -97,6 +99,14 @@ namespace CodingInterviewQuestions
 
             parkingGarage.Park(motorcycle);
 
+        }
+
+        private static void NumericalManipulationTest()
+        {
+            const string num1 = "999";
+            const string num2 = "99";
+            var results = NumericalManipulation.Add(num1, num2);
+            Console.WriteLine(results);
         }
     }
 }

@@ -20,3 +20,15 @@ C:\Users\jfast\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterv
 C:\Users\jfast\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\obj\Debug\netcoreapp2.2\CodingInterviewQuestions.AssemblyInfo.cs
 C:\Users\jfast\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\obj\Debug\netcoreapp2.2\CodingInterviewQuestions.dll
 C:\Users\jfast\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\obj\Debug\netcoreapp2.2\CodingInterviewQuestions.pdb
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\obj\Debug\netcoreapp2.2\CodingInterviewQuestions.csprojAssemblyReference.cache
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\obj\Debug\netcoreapp2.2\CodingInterviewQuestions.AssemblyInfoInputs.cache
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\obj\Debug\netcoreapp2.2\CodingInterviewQuestions.AssemblyInfo.cs
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\obj\Debug\netcoreapp2.2\CodingInterviewQuestions.csproj.CoreCompileInputs.cache
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\obj\Debug\netcoreapp2.2\CodingInterviewQuestions.dll
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\obj\Debug\netcoreapp2.2\CodingInterviewQuestions.pdb
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\bin\Debug\netcoreapp2.2\CodingInterviewQuestions.deps.json
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\bin\Debug\netcoreapp2.2\CodingInterviewQuestions.runtimeconfig.json
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\bin\Debug\netcoreapp2.2\CodingInterviewQuestions.runtimeconfig.dev.json
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\bin\Debug\netcoreapp2.2\CodingInterviewQuestions.dll
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\bin\Debug\netcoreapp2.2\CodingInterviewQuestions.pdb
+C:\Users\jfast\OneDrive - American College of Cardiology\Desktop\Repos\MySnippets\C#\CodingInterviewQuestions\CodingInterviewQuestions\obj\Debug\netcoreapp2.2\CodingInterviewQuestions.genruntimeconfig.cache

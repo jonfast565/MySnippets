@@ -8,5 +8,9 @@ namespace CodingInterviewQuestions.ObjectOrientedProgramming
     {
         public int Width { get; } = 10;
         public bool Occupied { get; } = false;
+        public ParkingSpaceId GetSpaceId()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

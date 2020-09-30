@@ -40,7 +40,7 @@ namespace CodingInterviewQuestions.ObjectOrientedProgramming
 
         public ParkingSpaceId Park(AbstractParkable vehicle)
         {
-            vehicle.SetParked(,this);
+            return null; //vehicle.SetParked(this);
         }
 
         public void UnPark(ParkingSpaceId space)
